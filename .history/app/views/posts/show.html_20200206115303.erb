@@ -4,7 +4,8 @@
 
 <% if current_user == @post.user %>
 <%= link_to "Edit", edit_post_path(@post) %>
-
+<% else %>
+<% redirect_to root_path %>
 <% end %>
 
 <% if current_user == @post.user %>

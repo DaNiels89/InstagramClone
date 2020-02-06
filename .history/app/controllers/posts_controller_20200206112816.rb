@@ -15,10 +15,6 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    if current_user != @post.user_id
-      redirect_to root_path
-      flash[:alert] = 'Unauthorized request'
-    end
   end
 
   def create
@@ -35,21 +31,13 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    # @post.user_id = current_user.id
-    # if @post.update(post_params)
-    #   redirect_to @post
-    #   flash[:notice] = 'Post is updated'
-    # else
-    #   redirect_back(fallback_location: root_path)
-    #   flash[:alert] = 'Post update failed'
-    # end
-    if current_user == @post.user
-      @post.update(post_params)
-      redirect_to '/posts'
+    @post.user_id = current_user.id
+    if @post.update(post_params)
+      redirect_to @post
       flash[:notice] = 'Post is updated'
     else
       redirect_back(fallback_location: root_path)
-      flash[:alert] = 'Not authorized to update post'
+      flash[:alert] = 'Post update failed'
     end
   end
 

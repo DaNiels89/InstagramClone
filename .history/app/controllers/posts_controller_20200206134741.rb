@@ -16,8 +16,9 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     if current_user != @post.user_id
-      redirect_to root_path
+      sign_out current_user
       flash[:alert] = 'Unauthorized request'
+      redirect_back(fallback_location: root_path)
     end
   end
 

@@ -1,0 +1,9 @@
+<h2>Edit post</h2>
+
+<%= render 'form' %>
+
+<% if current_user == @post.user %>
+<%= link_to "Edit", @post, method: :edit %>
+<% end %>
+
+<%= link_to 'Home', root_path %>

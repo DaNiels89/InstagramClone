@@ -3,8 +3,7 @@
 <%= render partial: 'post', locals: {post: @post} %>
 
 <% if current_user == @post.user %>
-<%= link_to "Edit", edit_post_path(@post) %>
-
+<%= link_to "Edit", @post, method: :edit %>
 <% end %>
 
 <% if current_user == @post.user %>
