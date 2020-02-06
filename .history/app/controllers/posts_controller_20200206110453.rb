@@ -33,7 +33,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'Post destroyed'
     else
       redirect_back(fallback_location: root_path)
-      flash[:alert] = 'Not authorized to delete the post'
+      flash[:alert] = 'You are not authorized to delete the post'
     end
   end
 

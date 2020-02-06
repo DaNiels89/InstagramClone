@@ -26,14 +26,14 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id]).destroy
+    Post.find(params[:id]).destroy
     if current_user == post.user
       post.destroy
       redirect_to '/posts'
       flash[:notice] = 'Post destroyed'
     else
-      redirect_back(fallback_location: root_path)
-      flash[:alert] = 'Not authorized to delete the post'
+      redirect_back(fallback_location(root_path))
+      flash[:alert] = 'You are not authorized to delete the post'
     end
   end
 
