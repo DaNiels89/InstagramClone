@@ -5,9 +5,6 @@
 <div>Image <%= f.file_field :pic, required: true %></div>
 <% end %>
 
-<div class="form-group">
-    <label class="form-label" for="textArea">Caption</label>
-    <%= f.text_area :caption, required: true, class: "form-text", rows: "10", cols: "90%" %>
-</div>
+<div>Caption <%= f.text_area :caption, required: true, class %></div>
 <%= f.submit %>
 <% end %>

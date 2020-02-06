@@ -2,12 +2,15 @@
 <% if @post.pic.attached? %>
 <%= @post.pic.filename  %>
 <% else %>
-<div>Image <%= f.file_field :pic, required: true %></div>
+<div class="form-group">
+    <label class="form-image" for="image">Image</label>
+    <%= f.file_field :pic, required: true %>
+</div>
 <% end %>
 
 <div class="form-group">
     <label class="form-label" for="textArea">Caption</label>
-    <%= f.text_area :caption, required: true, class: "form-text", rows: "10", cols: "90%" %>
+    <%= f.text_area :caption, required: true, class: "form-text" %>
 </div>
 <%= f.submit %>
 <% end %>
