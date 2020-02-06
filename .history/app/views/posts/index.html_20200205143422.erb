@@ -1,0 +1,8 @@
+<h2>Lists of posts</h2>
+
+<%= link_to "Create post", new_post_path %>
+
+
+<% @posts.each do |post| %>
+<%= render "post", locals: {post: @posts.last} %>
+<% end %>

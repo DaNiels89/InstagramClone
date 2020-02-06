@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+<%= render partial: "show_user", locals: {user: user} %>
+<% end %>
+
+<%= render 'show_user' %>

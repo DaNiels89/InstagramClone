@@ -1,0 +1,9 @@
+<h2>Lists of posts</h2>
+
+<%= link_to "Create post", new_post_path(post)" %>
+
+
+<% @posts.each do |post| %>
+<div><%= image_tag post.pic, class: "my-pic" %></div>
+<p><%= post.caption %></p>
+<% end %>

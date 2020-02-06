@@ -1,0 +1,6 @@
+<h2>Lists of posts</h2>
+
+<% post.each do |post| %>
+<% image_tag @post.pic, class: "my-pic" %>
+<p><%= post.caption %></p>
+<% end %>

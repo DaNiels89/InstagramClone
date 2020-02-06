@@ -1,0 +1,4 @@
+<% @posts.each do |post| %>
+<div><%= image_tag post.pic, class: "my-pic" %></div>
+<p><%= post.caption %></p>
+<% end %>
