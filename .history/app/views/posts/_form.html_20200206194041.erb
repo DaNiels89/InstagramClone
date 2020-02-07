@@ -1,0 +1,15 @@
+<div class="container-sm"></div>
+<%= form_with model: @post do |f| %>
+<% if @post.pic.attached? %>
+<%= @post.pic.filename  %>
+<% else %>
+<div>Image <%= f.file_field :pic, required: true %></div>
+<% end %>
+
+<div class="form-group">
+    <label class="form-label" for="textArea">Caption</label>
+    <%= f.text_area :caption, required: true, class: "form-text", rows: "10", cols: "90%" %>
+</div>
+<%= f.submit %>
+<% end %>
+</div
