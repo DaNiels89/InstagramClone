@@ -1,0 +1,13 @@
+<div class="container-sm">
+    <h2>Lists of posts</h2>
+</div>
+
+<div class="container-sm">
+    <%= link_to "Create post", new_post_path %>
+</div>
+
+<div class="container-sm">
+    <% @posts.each do |post| %>
+    <%= render partial: "post", locals: {post: post} %>
+    <% end %>
+</div>
