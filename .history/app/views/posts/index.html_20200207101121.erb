@@ -1,0 +1,22 @@
+<div class="container-sm">
+    <h2>Lists of posts</h2>
+</div>
+
+<div class="container-sm">
+    <%= link_to "Create post", new_post_path %>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <% @posts.each do |post| %>
+            <div><%= link_to(image_tag(post.pic, class: "my-pic"), post) %></div>
+
+            <div class="card-body">
+                <p><%= post.caption %></p>
+                <p><%= link_to post.user.email, post.user %></p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
